@@ -4,6 +4,14 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+// Calender JS
+var winHeight = $(window).height();
+var height = ( winHeight * 16.6666 ) / 100;
+var lineHeight = height + "px";
+
+$("li").css("line-height", lineHeight);
+$("li").css("height", height);
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
