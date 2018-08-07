@@ -27,9 +27,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 //
 // Requiring routes
+
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-//
+
+// Render 404 page for any unmatched routes
+app.get("*", function(req, res) {
+  res.render("404");
+});
+
 // Syncing database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
