@@ -4,6 +4,9 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+$("li").css("line-height", lineHeight);
+$("li").css("height", height);
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -63,7 +66,7 @@ var refreshExamples = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
+  alert("ive been clicked!");
   var example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
