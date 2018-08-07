@@ -27,6 +27,7 @@ module.exports = function(app) {
   //
   // Route for logging user out
   app.get("/logout", function(req, res) {
+    console.log("testing 123");
     req.logout();
     res.redirect("/");
   });
