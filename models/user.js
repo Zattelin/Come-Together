@@ -24,7 +24,11 @@ module.exports = function(sequelize, DataTypes) {
   };
   // using hook methods before a user created hash their password.
   User.hook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10),
+      null
+    );
   });
   return User;
 };

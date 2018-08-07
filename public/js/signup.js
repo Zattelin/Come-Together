@@ -2,10 +2,13 @@ function checkPasswordMatch() {
   var password = $("#password-input").val();
   var confirmPassword = $("#repassword-input").val();
 
-  if (password != confirmPassword)
+  if (password !== confirmPassword) {
+    {
       $("#divCheckPasswordMatch").html("Passwords do not match!");
-  else
-      $("#divCheckPasswordMatch").html("Passwords match.");
+    }
+  } else {
+    $("#divCheckPasswordMatch").html("Passwords match.");
+  }
 }
 $(document).ready(function() {
   $("#password-input, #repassword-input").keyup(checkPasswordMatch);
@@ -39,10 +42,12 @@ $(document).ready(function() {
     $.post("/api/signup", {
       email: email,
       password: password
-    }).then(function(data) {
-      window.location.replace(data);
-      // If there's an error, handle it by throwing up a boostrap alert
-    }).catch(handleLoginErr);
+    })
+      .then(function(data) {
+        window.location.replace(data);
+        // If there's an error, handle it by throwing up a boostrap alert
+      })
+      .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
