@@ -25,7 +25,7 @@ module.exports = function(app) {
   app.get("/members", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
-        msg: "Welcome Camille",
+        msg: "Welcome Registered Member",
         examples: dbExamples
       });
     });
