@@ -9,14 +9,14 @@ $("li").css("height", height);
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExample: function(createEvent) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/TodoTable/:id",
+      data: JSON.stringify(createEvent)
     });
   },
   getExamples: function() {

@@ -1,7 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+  var TodoTable = sequelize.define("TodoTable", {
+    todo: {
+      type: DataTypes.STRING
+    },
+    complete: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    dueDate: {
+      type: DataTypes.DATE
+    }
   });
-  return Example;
+  return TodoTable;
 };

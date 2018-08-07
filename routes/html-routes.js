@@ -23,10 +23,10 @@ module.exports = function(app) {
   });
 
   app.get("/members", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.TodoTable.findAll({}).then(function(petTodoDB) {
       res.render("index", {
         msg: "Welcome Camille",
-        examples: dbExamples
+        examples: petTodoDB
       });
     });
   });

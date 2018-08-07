@@ -45,3 +45,35 @@ module.exports = function(app) {
     }
   });
 };
+
+// Create a new example
+// app.post("/api/TodoTable/:id", function(req, res) {
+//   db.TodoTable.create({
+//     todo: req.body.todo
+//   }).then(function(petTodoDB) {
+//     res.json(petTodoDB);
+//   });
+// });
+
+// // PUT route for updating posts
+// // handled in the ajax call
+// // app.put("/api/TodoTable/:id", function(req, res) {
+// //   db.TodoTable.update(req.body,
+// //     {
+// //       where: {
+// //         id: req.params.id
+// //       }
+// //     })
+// //     .then(function(petTodoDB) {
+// //       res.json(petTodoDB);
+// //     });
+// // });
+
+// // Delete an example by id
+// app.delete("/api/examples/:id", function(req, res) {
+//   db.Example.destroy({ where: { id: req.params.id } }).then(function(
+//     dbExample
+//   ) {
+//     res.json(dbExample);
+//   });
+// });
