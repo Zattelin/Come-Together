@@ -1,6 +1,6 @@
 <div id="home">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">Pet Stop</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -19,11 +19,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Events</a>
         </li>
-
+        
       </ul>
     </div>
   </nav>
 
+<div class="jumbotron">
 
   <div class="container">
     <div class="row">
@@ -32,10 +33,11 @@
         <h2>Here Is Your Pet Information</h2>
 
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://static.boredpanda.com/blog/wp-content/uploads/2014/09/underwater-puppy-photography-seth-casteel-8.jpg" alt="Card image cap">
+          <img class="card-img-top" src="https://static.boredpanda.com/blog/wp-content/uploads/2014/09/underwater-puppy-photography-seth-casteel-8.jpg"
+            alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Name: Jimmy</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Energic, sweet and slightly eccentric. His favorite toy is his tennis ball</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Age:</li>
@@ -43,60 +45,49 @@
             <li class="list-group-item">Species</li>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href="https://www.banfield.com/" class="card-link">Banfield</a>
+            <a href="https://vcahospitals.com/" class="card-link">VCA</a>
           </div>
         </div>
 
-
-{{!-- <div id='fullDiv' >
+   
+<div class = "placeholderCalender">
+        <div class="month"> 
   <ul>
-    <li>SUN</li>
-    <li>MON</li>
-    <li>TUE</li>
-    <li>WED</li>
-    <li>THUR</li>
-    <li>FRI</li>
-    <li>SAT</li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li> --}}
-    {{!-- <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li> --}}
-    {{!-- <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>August<br><span style="font-size:18px">2017</span></li>
   </ul>
-</div> --}}
+</div>
 
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days"> 
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  
+
+</ul>
+</div>
         <form class="clearfix mb-4" action="POST">
+          <div class = "eventName">Enter Your Event Information</div>
           <div class="form-group">
             <label for="example-text">Name of Event</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Event">
@@ -120,6 +111,11 @@
     </div>
   </div>
 </div>
+
+  
+</div>
+
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

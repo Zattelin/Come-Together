@@ -4,11 +4,6 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-// Calender JS
-var winHeight = $(window).height();
-var height = ( winHeight * 16.6666 ) / 100;
-var lineHeight = height + "px";
-
 $("li").css("line-height", lineHeight);
 $("li").css("height", height);
 
@@ -71,7 +66,7 @@ var refreshExamples = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
+  alert("ive been clicked!");
   var example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
