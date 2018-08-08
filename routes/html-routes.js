@@ -23,11 +23,28 @@ module.exports = function(app) {
   });
 
   app.get("/members", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    console.log(req);
+    db.Pet.findOne({
+      where: {
+        id: req.user.id
+      }
+    }).then(function(data) {
       res.render("index", {
         msg: "Welcome Camille",
-        examples: dbExamples
+        name: data.name,
+        about: data.about,
+        age: data.age,
+        breed: data.breed,
+        species: data.species
       });
     });
+  });
+  // pet profile
+  // app.get("/api/new", function(req, res) {
+  //   res.render("example");
+  // });
+
+  app.get("/addPet", function(req, res) {
+    res.render("new-pet-form");
   });
 };
