@@ -29,13 +29,16 @@ module.exports = function(app) {
         id: req.user.id
       }
     }).then(function(data) {
-      res.render("index", {
-        msg: "Welcome Camille",
-        name: data.name,
-        about: data.about,
-        age: data.age,
-        breed: data.breed,
-        species: data.species
+      db.Todo.findAll({}).then(function(petTodoDB) {
+        res.render("index", {
+          msg: "Welcome Camille",
+          Todos: petTodoDB,
+          name: data.name,
+          about: data.about,
+          age: data.age,
+          breed: data.breed,
+          species: data.species
+        });
       });
     });
   });
