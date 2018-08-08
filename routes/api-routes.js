@@ -46,6 +46,41 @@ module.exports = function(app) {
     }
   });
 
+  // pet profiles
+  app.get("/api/pets/:id", function(req, res) {
+    if (req.params.id) {
+      db.findOne({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      db.findAll({}).then(function(result) {
+        return res.json(result);
+      });
+    }
+  });
+
+  // If a user sends data to add a new pet...
+  app.post("/api/pets", function(req, res) {
+    var pet = req.body;
+    var routeName = pet.name.replace(/\s+/g, "").toLowerCase();
+    db.Pet.create({
+      routeName: routeName,
+      name: pet.name,
+      description: pet.description,
+      age: pet.age,
+      breed: pet.breed,
+      species: pet.species
+    }).then(function(dbPet) {
+      // TODO: do something with dbPet
+      res.json(dbPet);
+    });
+  });
+
+
   // Create a new example
   app.post("/api/todos", function(req, res) {
     console.log("NEW TODO:", req.body);
@@ -70,15 +105,4 @@ module.exports = function(app) {
     });
   });
 
-  // // PUT route for updating posts
-  // // handled in the ajax call
-  // app.put("/api/Todo/:id", function(req, res) {
-  //   db.Todo.update(req.body,
-  //     { where: {
-  //       id: req.params.id
-  //     }
-  //     }).then(function(petTodoDB) {
-  //     res.json(petTodoDB);
-  //   });
-  // });
 };
