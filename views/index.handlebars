@@ -85,21 +85,21 @@
         <form class="clearfix mb-4" action="POST">
           <div class = "eventName">Enter Your Event Information</div>
           <div class="form-group">
-            <label for="example-text">Name of Event</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Event">
+            <label for="todo-text">Name of Event</label>
+            <input type="text" id="todo-text" class="form-control" aria-describedby="todo-text" placeholder="Enter Event">
           </div>
           <div class="form-group">
-            <label for="example-description">Date and Time</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Date, Time"></textarea>
+            <label for="todo-due-date">Date and Time</label>
+            <input type="datetime-local" class="form-control" id="todo-due-date" aria-describedby="todo-due-date" placeholder="Enter Date, Time"/>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
         <h3>List of Upcoming Events:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
+        <ul id="todos-list" class="list-group">
+          {{#each Todos}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+            <span>{{this.todo}}<br>{{this.dueDate}}</span>
+            <button data-id="{{this.id}}" class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
         </ul>

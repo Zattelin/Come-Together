@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-  var TodoTable = sequelize.define("TodoTable", {
+  var Todo = sequelize.define("Todo", {
     todo: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     complete: {
       type: DataTypes.BOOLEAN,
@@ -11,5 +12,5 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE
     }
   });
-  return TodoTable;
+  return Todo;
 };

@@ -45,4 +45,40 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Create a new example
+  app.post("/api/todos", function(req, res) {
+    console.log("NEW TODO:", req.body);
+    db.Todo.create({
+      todo: req.body.todo,
+      dueDate: req.body.dueDate
+    }).then(function(petTodoDB) {
+      res.json(petTodoDB);
+    });
+  });
+
+  app.get("/api/todos", function(req, res) {
+    db.Todo.findAll({}).then(function(petTodoDB) {
+      res.json(petTodoDB);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/todos/:id", function(req, res) {
+    db.Todo.destroy({ where: { id: req.params.id } }).then(function(petTodoDB) {
+      res.json(petTodoDB);
+    });
+  });
+
+  // // PUT route for updating posts
+  // // handled in the ajax call
+  // app.put("/api/Todo/:id", function(req, res) {
+  //   db.Todo.update(req.body,
+  //     { where: {
+  //       id: req.params.id
+  //     }
+  //     }).then(function(petTodoDB) {
+  //     res.json(petTodoDB);
+  //   });
+  // });
 };
