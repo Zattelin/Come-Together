@@ -20,12 +20,14 @@ $("#add-btn").on("click", function(event) {
 
   console.log("SENT TO SERVER:", newAnimal);
 
-  $.post("/api/pets", newAnimal).then(function(data) {
-    console.log("RETURNED FROM SERVER:", data);
-    location.replace("/members");
-  }).catch(function(err) {
-    console.log(err);
-  });
+  $.post("/api/pets", newAnimal)
+    .then(function(data) {
+      console.log("RETURNED FROM SERVER:", data);
+      location.replace("/members");
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 
   $("#name").val("");
   $("#description").val("");

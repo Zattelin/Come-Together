@@ -23,7 +23,7 @@ module.exports = function(app) {
   });
 
   app.get("/members", function(req, res) {
-    console.log( req );
+    console.log(req);
     db.Pet.findOne({
       where: {
         id: req.user.id
