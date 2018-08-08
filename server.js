@@ -28,6 +28,16 @@ app.use(passport.session());
 //
 // Requiring routes
 
+// Middleware for protected routes
+app.use(function(req, res, next) {
+  var protectedRoutes = ["/members", "/addPet", "/api/user_data"];
+  if (!protectedRoutes.includes(req.url) || req.user) {
+    next();
+  } else {
+    res.redirect("/login");
+  }
+});
+
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
