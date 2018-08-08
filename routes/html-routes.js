@@ -23,6 +23,7 @@ module.exports = function(app) {
   });
 
   app.get("/members", function(req, res) {
+
     console.log( req );
     db.Pet.findOne({
       where: {
@@ -36,13 +37,15 @@ module.exports = function(app) {
         age: data.age,
         breed: data.breed,
         species: data.species
+
+    db.Todo.findAll({}).then(function(petTodoDB) {
+      res.render("index", {
+        msg: "Welcome Camille",
+        Todos: petTodoDB
+
       });
     });
   });
-  // pet profile
-  // app.get("/api/new", function(req, res) {
-  //   res.render("example");
-  // });
 
   app.get("/addPet", function(req, res) {
     res.render("new-pet-form");
