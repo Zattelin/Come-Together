@@ -3,11 +3,6 @@ var $todoText = $("#todo-text");
 var $todoDueDate = $("#todo-due-date");
 var $submitBtn = $("#submit");
 var $todosList = $("#todos-list");
-
-// TODO: fix or remove code below
-// $("li").css("line-height", lineHeight);
-// $("li").css("height", height);
-
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveTodo: function(todo) {
