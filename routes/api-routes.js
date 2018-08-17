@@ -72,7 +72,8 @@ module.exports = function(app) {
       description: pet.description,
       age: pet.age,
       breed: pet.breed,
-      species: pet.species
+      species: pet.species,
+      UserId: req.user.id
     }).then(function(dbPet) {
       // TODO: do something with dbPet
       res.json(dbPet);

@@ -8,5 +8,13 @@ module.exports = function(sequelize, DataTypes) {
     species: DataTypes.STRING
   });
 
+  Pet.associate = function(models) {
+    Pet.belongsTo(models.User, {
+      foreign: {
+        allowNull: false
+      }
+    });
+  };
+
   return Pet;
 };

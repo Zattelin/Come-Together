@@ -23,13 +23,15 @@ module.exports = function(app) {
   });
 
   app.get("/members", function(req, res) {
-    console.log(req);
     db.Pet.findOne({
       where: {
-        id: req.user.id
+        UserId: req.user.id
       }
     }).then(function(data) {
-      db.Todo.findAll({}).then(function(petTodoDB) {
+      if (!data) return res.render("index");
+      db.Todo.findAll({
+        MemberId: req.user.id
+      }).then(function(petTodoDB) {
         res.render("index", {
           msg: "Welcome Camille",
           Todos: petTodoDB,
@@ -42,10 +44,6 @@ module.exports = function(app) {
       });
     });
   });
-  // pet profile
-  // app.get("/api/new", function(req, res) {
-  //   res.render("example");
-  // });
 
   app.get("/addPet", function(req, res) {
     res.render("new-pet-form");
